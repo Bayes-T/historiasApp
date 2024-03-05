@@ -1,1 +1,46 @@
-<p>login-page works!</p>
+<div class="login d-flex justify-content-center align-items-center">
+  <mat-card class="login__card">
+
+    <div class="login__header">
+      <div class="login__logo d-flex justify-content-center">
+        <img src="assets/bgimg/psi_icon.png">
+<!--    <mat-icon>assignment</mat-icon>-->
+      </div>
+      <h2>Historias clínicas - Psicología</h2>
+    <h2>Ingresar</h2>
+    </div> <!-- fin del login header !-->
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSave()">
+
+      <div class="login__formField">
+        <p>Email</p>
+        <input type="email" formControlName="email" placeholder="Tu email">
+        <span *ngIf="isValidField('email')" class="form-text text-danger">
+       Email inválido
+    </span>
+
+      </div> <!-- fin del formInput !-->
+
+      <div class="login__formField">
+        <p>Contraseña</p>
+        <input type="password" formControlName="password" placeholder="Tu contraseña">
+        <span *ngIf="isValidField('password')" class="form-text text-danger">
+       Contraseña inválida
+    </span>
+      </div> <!-- fin del formInput !-->
+
+      <div class="d-flex justify-content-center p-3">
+        <button class="login__button" type="submit">Ingresar
+          <div class="arrow-wrapper">
+            <div class="arrow"></div>
+          </div>
+        </button>
+      </div> <!--fin del div center button !-->
+
+      <div class="login__register">
+        ¿No tienes una cuenta? <span>Registrarme</span>
+      </div> <!-- fin del register__login !-->
+
+    </form> <!-- fin del login form !-->
+  </mat-card>
+</div>

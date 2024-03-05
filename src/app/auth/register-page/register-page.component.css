@@ -1,0 +1,119 @@
+/*REGISTER */
+/*Configuración layout para poder centrar */
+.register {
+  height: 100%;
+}
+
+/*REGISTER CARD */
+/* Tamaño de la card */
+.register__card {
+  width: 35%;
+  padding: 2rem;
+}
+
+/*REGISTER HEADER */
+/* Centrar el header y modificar logo*/
+.register__header {
+  text-align: center;
+}
+
+.register__header img{
+  height: 70px;
+  margin-bottom: .4rem;
+}
+
+.register__logo {
+  color: var(--main-color);
+  transform: scale(2.5);
+  margin-bottom: 1rem;
+}
+
+/*REGISTER FORM */
+
+/* Input field */
+.register__formField {
+  margin-bottom: 1rem;
+}
+.register__formField p{
+  color: var(--main-color);
+}
+.register__formField input{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+
+/*REGISTER BUTTON */
+
+.register__button {
+  --primary-color: #F5A9BC;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.register__button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register__button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.register__button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.register__button:hover {
+  background-color: var(--hover-color);
+}
+
+.register__button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.register__button:hover .arrow:before {
+  right: 0;
+}
+
+/* REGISTER LOGIN */
+
+.register__login span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+

@@ -1,1 +1,58 @@
-<p>register-page works!</p>
+<div class="register d-flex justify-content-center align-items-center">
+<mat-card class="register__card">
+
+    <div class="register__header">
+      <div class="d-flex justify-content-center">
+        <img src="assets/bgimg/psi_icon.png">
+<!--      <mat-icon class="register__logo">assignment</mat-icon>-->
+      </div>
+      <h2>Bienvenido/a</h2>
+
+      <p class="font-italic">Regístrate para empezar a usar la aplicación</p>
+    </div> <!-- fin del register__header !-->
+
+    <div class="register__form">
+      <form [formGroup]="registerForm" (ngSubmit)="onSave()">
+
+        <div class="register__formField">
+          <p>Nombre</p>
+          <input type="text" formControlName="name" placeholder="Tu nombre">
+        </div> <!-- fin del formInput !-->
+        <span *ngIf="isValidField('name')" class="form-text text-danger">
+       Nombre demasiado corto
+    </span>
+
+        <div class="register__formField">
+          <p>Email</p>
+          <input type="email" formControlName="email" placeholder="Tu email">
+          <span *ngIf="isValidField('email')" class="form-text text-danger">
+       Email inválido
+    </span>
+        </div> <!-- fin del formInput !-->
+
+        <div class="register__formField">
+          <p>Contraseña</p>
+          <input type="password" formControlName="password" placeholder="Tu contraseña">
+          <span *ngIf="isValidField('password')" class="form-text text-danger">
+       Contraseña inválida
+    </span>
+        </div> <!-- fin del formInput !-->
+
+      <div class="d-flex justify-content-center p-3">
+        <button class="register__button" type="submit">Registrarse
+          <div class="arrow-wrapper">
+            <div class="arrow"></div>
+          </div>
+        </button>
+      </div> <!--fin del div center button !-->
+      </form>
+
+      <div class="register__login">
+        ¿Ya estás registrado? <span>Ingresar</span>
+      </div> <!-- fin del register__login !-->
+
+    </div> <!-- fin del register__form !-->
+
+
+</mat-card>
+</div> <!-- fin del register !-->

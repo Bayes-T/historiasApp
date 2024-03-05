@@ -6,6 +6,8 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { LogoutPageComponent } from './logout-page/logout-page.component';
+import {MaterialModule} from "../material/material.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { LogoutPageComponent } from './logout-page/logout-page.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }

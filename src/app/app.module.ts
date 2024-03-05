@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MaterialModule} from "./material/material.module";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import {DashboardHomeComponent} from "./dashboard/dashboard-home/dashboard-home.component";
+import {MaterialModule} from "./material/material.module";
+import { ListadoPacientesComponent } from './listado-pacientes/listado-pacientes.component';
+
 
 
 
@@ -14,13 +18,14 @@ import { ErrorPageComponent } from './error-page/error-page.component';
   declarations: [
     AppComponent,
     ErrorPageComponent,
+    DashboardHomeComponent,
+    ListadoPacientesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
