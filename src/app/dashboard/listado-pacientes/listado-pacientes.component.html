@@ -1,0 +1,54 @@
+<div class="container">
+<div class="listado" id="listado">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="table">
+
+  <ng-container matColumnDef="Indice">
+    <th mat-header-cell *matHeaderCellDef> Indice </th>
+    <td mat-cell *matCellDef="let paciente"> {{paciente.Indice}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.Nombre}} </td>
+  </ng-container>
+
+
+    <ng-container matColumnDef="DNI">
+      <th mat-header-cell *matHeaderCellDef> DNI </th>
+      <td mat-cell *matCellDef="let element"> {{element.DNI}} </td>
+    </ng-container>
+
+  <ng-container matColumnDef="Edad">
+    <th mat-header-cell *matHeaderCellDef> Edad </th>
+    <td mat-cell *matCellDef="let element"> {{element.Edad}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="OSocial">
+    <th mat-header-cell *matHeaderCellDef> Obra social </th>
+    <td mat-cell *matCellDef="let element"> {{element.OSocial}} </td>
+  </ng-container>
+
+    <ng-container matColumnDef="Opciones">
+      <th mat-header-cell *matHeaderCellDef> Opciones </th>
+      <td mat-cell *matCellDef="let paciente">
+        <button mat-flat-button class="listado__boton" id="listado__historia">
+        {{paciente.Acciones.Leer.Texto}}
+        </button>
+        <button mat-flat-button class="listado__boton" id="listado__editar">
+          {{paciente.Acciones.Editar.Texto}}
+        </button>
+        <button mat-flat-button class="listado__boton" id="listado__borrar">
+          {{paciente.Acciones.Borrar.Texto}}
+        </button>
+      </td>
+    </ng-container>
+
+  <!--aqui debe haber una columan solo para la accion. DEBO AGREGARLE EVENT HANDLER A LA TABLA? O CON UN SIMPLE BOTON? En la base de datos debo poner el nombre del boton y el link al que lleve, que va a ser la pagina de cada paciente!!! entonces para contener texto y url puede ser un objeto  !-->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div> <!-- fin del listado !-->
+</div>

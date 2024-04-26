@@ -1,4 +1,3 @@
-<div class="dashboard">
 
   <mat-toolbar id="toolbar" class="toolbar">
     <button (click)="sidenav.toggle()"  mat-icon-button class="toolbar__menu">
@@ -14,9 +13,9 @@
   </mat-toolbar>
 
   <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side">
+    <mat-sidenav #sidenav mode="side" opened>
       <mat-nav-list>
-        <mat-list-item class="d-inline-flex" *ngFor="let item of itemList" [routerLink]="item.url" (click)="sidenav.toggle()">
+        <mat-list-item class="d-inline-flex" *ngFor="let item of itemList" [routerLink]="item.url">
           <mat-icon id="maticon" matListItemIcon>{{ item.img }}</mat-icon>
           <span id="itemlist">
             {{ item.text }}
@@ -25,7 +24,7 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-
+  <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</div>
+

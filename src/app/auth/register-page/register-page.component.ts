@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ValidationService} from "../validation.service";
+import {registerUser} from "../interfaces/authInterfaces";
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-register-page',
@@ -8,7 +10,7 @@ import {ValidationService} from "../validation.service";
   styleUrls: ['./register-page.component.css']
 })
 export class RegisterPageComponent {
-  constructor(private formbuilder: FormBuilder, private validationService:ValidationService) {
+  constructor(private formbuilder: FormBuilder, private validationService:ValidationService, private authservice: AuthService) {
   }
 
   public registerForm:FormGroup = this.formbuilder.group({
@@ -23,7 +25,16 @@ export class RegisterPageComponent {
 
   onSave():void{
 
-    // if (this.registerForm.invalid) return
+    if (this.registerForm.invalid) return
     console.log(this.registerForm.controls['password'].errors)
+
+    const registerUser:registerUser = {
+      Name : this.registerForm.value.name!,
+      Email : this.registerForm.value.email!,
+      Password: this.registerForm.value.password!
+    }
+
+    this.authservice.register(registerUser).subscribe();
+
   }
 }

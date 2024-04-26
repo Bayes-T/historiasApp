@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ValidationService} from "../validation.service";
+import {AuthService} from "../auth.service";
+import {loginUser} from "../interfaces/authInterfaces";
 
 @Component({
   selector: 'app-login-page',
@@ -8,7 +10,7 @@ import {ValidationService} from "../validation.service";
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  constructor(private formbuilder: FormBuilder, private validationService:ValidationService) {
+  constructor(private formbuilder: FormBuilder, private validationService:ValidationService, private authservice: AuthService) {
   }
 
   public loginForm = this.formbuilder.group({
@@ -20,9 +22,15 @@ export class LoginPageComponent {
     return this.validationService.isValidField(this.loginForm, field)
   }
 
-  onSave():void{
+  onSave(){
 
     if (this.loginForm.invalid) return
     console.log(this.loginForm.value)
+    const loginUser:loginUser = {
+      Email: this.loginForm.value.email!,
+      Password: this.loginForm.value.password!
+    }
+    this.authservice.login(loginUser).subscribe()
+
   }
 }

@@ -1,0 +1,30 @@
+
+<mat-toolbar id="toolbar" class="toolbar">
+    <button (click)="sidenav.toggle()"  mat-icon-button class="toolbar__menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Historias clínicas</span>
+    <img class="toolbar__icon" src="assets/bgimg/psi_icon.png">
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button class="toolbar__exit">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+        <mat-nav-list>
+            <mat-list-item class="d-inline-flex" *ngFor="let item of itemList" [routerLink]="item.url">
+                <mat-icon id="maticon" matListItemIcon>{{ item.img }}</mat-icon>
+                <span id="itemlist">
+            {{ item.text }}
+          </span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,70 @@
+<div class="patientDetail">
+
+  <div class="row patientDetail__Data mt-3">
+
+    <div class="col-9">
+
+      <mat-card class="patientDetail__card">
+        <mat-card-header>
+          <mat-card-title>Nombre del paciente</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <div class="d-flex justify-content-between">
+
+
+      <p class="patientDetail__bold">Edad: </p> <p> EdadPac</p>
+
+            <p class="patientDetail__bold">Fecha de nacimiento: </p> <p> FechadeNacimiento</p>
+
+              <p class="patientDetail__bold">Género: </p> <p> GéneroPac</p>
+
+            <p class="patientDetail__bold">Obra Social: </p> <p> Osep</p>
+
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+
+    </div> <!-- fin del col !-->
+
+    <div (click)="agregarEntrada()" class="col-3 d-flex justify-content-around align-items-center patientDetail__agregar">
+        <mat-icon class="patientDetail__add">note_add</mat-icon>
+      <div>
+        <h2>Agregar entrada</h2>
+      </div>
+    </div> <!-- fin del col !-->
+
+  </div> <!-- fin del primer row !-->
+
+  <div class="row patientDetail__Table mt-3">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Fecha">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let element"> {{element.Fecha}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Profesional">
+        <th mat-header-cell *matHeaderCellDef> Profesional </th>
+        <td mat-cell *matCellDef="let element"> {{element.Profesional}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Nota">
+        <th mat-header-cell *matHeaderCellDef> Nota </th>
+        <td mat-cell *matCellDef="let element"> {{element.Nota}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>  <!-- fin del segundo row !-->
+</div>

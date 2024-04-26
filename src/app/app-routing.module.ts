@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ErrorPageComponent} from "./error-page/error-page.component";
-import {DashboardHomeComponent} from "./dashboard/dashboard-home/dashboard-home.component";
 
 const routes: Routes = [
   {path: 'auth',
@@ -14,10 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./patients/patients.module').then(m => m.PatientsModule)
   },
   {path: 'dashboard',
-    component: DashboardHomeComponent
-  },
-  {path: '404',
-    component: ErrorPageComponent
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: '',

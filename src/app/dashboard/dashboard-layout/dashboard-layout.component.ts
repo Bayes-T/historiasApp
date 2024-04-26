@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard-home',
-  templateUrl: './dashboard-home.component.html',
-  styleUrls: ['./dashboard-home.component.css']
+  selector: 'app-dashboard-layout',
+  templateUrl: './dashboard-layout.component.html',
+  styleUrls: ['./dashboard-layout.component.css']
 })
 export class DashboardHomeComponent {
   public itemList = [
@@ -16,6 +16,11 @@ export class DashboardHomeComponent {
       text: "Mi cuenta",
       img: "person",
       url: "/dashboard"
+    },
+    {
+      text: "Mis pacientes",
+      img: "person",
+      url: "/patients/listado"
     },
     {
       text: "Configuración",
