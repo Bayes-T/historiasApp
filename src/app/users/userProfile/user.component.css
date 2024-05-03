@@ -1,52 +1,16 @@
-/* Agregar alto al layout para que tenga lugar para centrarse */
-.login {
-  height: 100%;
-}
-
-.login__card {
-  width: 35%;
-  padding: 2rem;
-}
-
-/*LOGIN HEADER */
-/* Centrar el header y modificar logo*/
-.login__header {
-  text-align: center;
-}
-
-.login__header img{
-  height: 28px;
-  margin-bottom: .4rem;
-}
-.login__logo {
-  color: var(--main-color);
-  transform: scale(2.5);
-  margin-bottom: 1rem;
-}
-
-/*LOGIN FORM */
-
-/* Input field */
-.login__formField {
-  margin-bottom: 1rem;
-}
-.login__formField p{
+.profile__Nombre {
   color: var(--main-color);
 }
-.login__formField input{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  background-color: transparent;
+
+.profileForm__field{
+/** Modificar margins para que se alinee con los botones, luego hacer lo de los métodos**/
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-/*BUTTONS */
+/** Buttons **/
 
-.login__button {
+.form__button {
   --primary-color: #F5A9BC;
   --secondary-color: #fff;
   --hover-color: #111;
@@ -65,13 +29,13 @@
   font-weight: bold;
 }
 
-.login__button .arrow-wrapper {
+.form__button .arrow-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login__button .arrow {
+.form__button .arrow {
   margin-top: 1px;
   width: var(--arrow-width);
   background: var(--primary-color);
@@ -80,7 +44,7 @@
   transition: 0.2s;
 }
 
-.login__button .arrow::before {
+.form__button .arrow::before {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -94,21 +58,14 @@
   transform: rotate(-45deg);
 }
 
-.login__button:hover {
+.form__button:hover {
   background-color: var(--hover-color);
 }
 
-.login__button:hover .arrow {
+.form__button:hover .arrow {
   background: var(--secondary-color);
 }
 
 .register__button:hover .arrow:before {
   right: 0;
-}
-
-/* LOGIN REGISTER */
-
-.login__register span {
-  color: var(--main-color);
-  font-weight: bold;
 }

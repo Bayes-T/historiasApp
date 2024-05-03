@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PatientLayoutComponent} from "./patientLayout/patient.component";
 import {PatientDetailComponent} from "./patient-detail/patient-detail.component";
+import {EditorTextoComponent} from "../shared/editor-texto/editor-texto.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'idejemplo',
         component: PatientDetailComponent
+      },
+      {
+        path: 'agregarHistoria',
+        component: EditorTextoComponent
       },
       {
         path: '**',

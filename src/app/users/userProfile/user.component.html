@@ -1,0 +1,78 @@
+<div class="container profile">
+
+  <div class="profile__Nombre text-center mt-3">
+  <h1>Nombre de usuario</h1>
+  </div>
+
+  <div>
+  <!-- Nombre -->
+    <div class="row">
+      <label>Nombre</label>
+    </div>
+
+    <div class="row profileForm__field">
+    <div class="col">
+      <input class="w-100 h-75" type="text" [placeholder]=Nombre #NombreInput>
+    </div>
+
+    <div class="col d-flex">
+      <button class="form__button" type="submit" (click)="editarNombre()" >Editar
+        <div class="arrow-wrapper">
+          <div class="arrow"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Email -->
+    <div class="row">
+      <label>Email</label>
+    </div>
+
+  <div class="row profileForm__field">
+    <div class="col">
+      <input class="w-100 h-75" type="text"  [placeholder]=Email #EmailInput>
+    </div>
+
+    <div class="col d-flex align-items-end">
+      <button class="form__button" type="submit" (click)="editarEmail()">Editar
+        <div class="arrow-wrapper">
+          <div class="arrow"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Cambiar contraseña -->
+    <div class="row">
+      <label>Contraseña actual</label>
+    </div>
+
+    <div class="row">
+    <div class="col profileForm__field">
+      <input class="w-50 h-100" type="password" placeholder="Ingresa la contraseña actual" #Password1Input>
+    </div>
+  </div>
+
+    <!-- Cambiar contraseña 2 -->
+      <div class="row">
+        <label>Contraseña nueva</label>
+      </div>
+
+    <div class="row profileForm__field">
+      <div class="col">
+        <input class="w-50 h-100" type="password" placeholder="Ingresa la nueva contraseña" #Password2Input>
+      </div>
+    </div>
+
+    <div class="row w-25 mt-3 d-flex">
+      <div>
+      <button class="form__button" type="submit" (click)="cambiarPassword()">Cambiar contraseña
+        <div class="arrow-wrapper">
+          <div class="arrow"></div>
+        </div>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>

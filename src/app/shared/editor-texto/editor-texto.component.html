@@ -1,0 +1,9 @@
+<div class="container">
+<div class="NgxEditor__Wrapper">
+  <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+  <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Escribe aquí...'"></ngx-editor>
+</div>
+
+<button class="editorButton" (click)="agregarHistoria()">Agregar</button>
+  <button class="editorButton" (click)="Atras()">Atrás</button>
+</div>
